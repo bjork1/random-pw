@@ -1,7 +1,6 @@
-//If "Generate password button" pressed, then output random pw
 
-//Click event, if button pressed, then perform this function
-
+//Define array called characters with letters, numbers, and symbols
+//Join function to remove commas from output
 
 var characters = [
     "A",
@@ -82,12 +81,19 @@ var characters = [
 
  ].join('') ;
 
+
+//Prompt to enter number of characters for password
+
 var digits = window.prompt("How many?");
 
-//console.log(digits);
-//prompt("How many characters would you like in your password?");
+
+//Define function called randPassword(characters) to return number of characters entered in prompt
+//Create random combination of characters 
+//Join result to remove characters from output
+
 
 function randPassword(characters) {
+    
     var result =[];
     for (var i = 0; i < digits; i++){
         result.push(characters[Math.floor(Math.random() * characters.length)]);
@@ -96,81 +102,21 @@ function randPassword(characters) {
     return result.join('');
     
 
- 
-  
-       
+  }
 
-
-    //return characters[Math.floor(Math.random() * characters.length)] 
-
-}
-    
-
-
-
-
-
- //   let i = 0;
-//do {
-  //i += digits;
-  //return (i);
-//} while (i < 180);
-//}
-//function randPassword(characters) {
-    //var smooth = characters[Math.floor(Math.random() * characters.length)];
-    
-    //return smooth+smooth;
-//}
-
- 
-//console.log(randPassword(characters));
-
-
+//Define function genPassword to link click from HTML button
+//Link with ID "password" to return in text box of HTML
 
 function genPassword() {
     document.getElementById("password").innerHTML = randPassword(characters);
 }
 
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
 
-//console.log(characters.join(''));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//function genPassword() {
-  //document.getElementById("password").innerHTML = getRndInteger(0,10);
-//}
-//function getRndInteger(min, max) {
- //   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-  //}
-
-
-//Define function to create random number (start with just showing number "5" if button pressed)
-
-//Output should include the following: 8 random letters, numbers, or symbols, some capital and some not
-
-
-//The output will show in the text field
-
-//If clear clipboard button pressed, the text field should disappear
 
