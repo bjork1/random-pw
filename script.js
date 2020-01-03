@@ -3,17 +3,17 @@
 //Click event, if button pressed, then perform this function
 
 
-const characters = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
+var characters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
     'K',
     'L',
     'M',
@@ -56,30 +56,71 @@ const characters = [
     'x',
     'y',
     'z',
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    0
-    
-];
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '0',
+    "!",
+    "#",
+    "$",
+    "%",
+    "*",
+    "<",
+    "=",
+    ">",
+    "?",
+    "@",
+    "&",
+    "+"
+ 
 
+ ].join('') ;
+
+var digits = window.prompt("How many?");
+
+//console.log(digits);
+//prompt("How many characters would you like in your password?");
 
 function randPassword(characters) {
-    return characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
-    + characters[Math.floor(Math.random() * characters.length)]
+    var result =[];
+    for (var i = 0; i < digits; i++){
+        result.push(characters[Math.floor(Math.random() * characters.length)]);
+    }
+
+    return result.join('');
+    
+
+ 
+  
+       
+
+
+    //return characters[Math.floor(Math.random() * characters.length)] 
+
 }
+    
+
+
+
+
+
+ //   let i = 0;
+//do {
+  //i += digits;
+  //return (i);
+//} while (i < 180);
+//}
+//function randPassword(characters) {
+    //var smooth = characters[Math.floor(Math.random() * characters.length)];
+    
+    //return smooth+smooth;
+//}
 
  
 //console.log(randPassword(characters));
@@ -90,7 +131,8 @@ function genPassword() {
     document.getElementById("password").innerHTML = randPassword(characters);
 }
 
-console.log(characters.join(''));
+
+//console.log(characters.join(''));
 
 
 
