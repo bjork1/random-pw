@@ -32,7 +32,7 @@
         <div class ="col-sm-8">
 
        
-        <div class = "pw">Generate a Password</div>
+        <div class = "pw">Password Generator</div>
         </div>
 
         <div class="col-sm-2">
@@ -65,6 +65,7 @@
 
 
             <div class = "row">
+                    <h1>Password Generator</h1>
 
                     <div id = field>
 
@@ -90,7 +91,11 @@
                 <div class = "col-sm-5">
 
                 <!-- left button -->
-                    <button onclick="genPassword('#password')">Generate Password</button>
+                    <!-- <button onclick="genPassword('#password')">Generate Password</button> -->
+                    
+                    
+                    <button id = "red" onclick="genPassword('#password')" type="button" class="btn btn-primary btn-lg">Generate Password</button>
+ 
 
 
                    <!-- <button onclick = "myFunction()" type="button" id = "red" class="btn btn-danger">Generate Password</button onclick = "myFunction()" > -->
@@ -104,8 +109,12 @@
                
                -->
 
-                    <button onclick="copyToClipboard('#password')">Copy to Clipboard</button>
-               
+                    <!--    <button onclick="copyToClipboard('#password')">Copy to Clipboard</button> -->
+
+
+                    <button id = "gray" onclick="copyToClipboard('#password')" type="button" class="btn btn-primary btn-lg">Copy to Clipboard</button>
+
+
                 </div>
 
                 <div class = "col-sm-1">

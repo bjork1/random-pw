@@ -98,22 +98,26 @@ console.log(array3);
 
 
 
-var digits = window.prompt("How many?");
+//var digits = window.prompt("How many?");
 
 
 
 //Digits between 8 and 180 by if statements with while loop//
 
+/*
 while (digits < 7 || digits > 180 || isNaN(digits)) {
     alert("Please try again");
     var digits = window.prompt("How many?");
 
 }
+*/
 
 /*Define function called randPassword(characters) to return number of characters entered in prompt
 Create random combination of characters 
 Join result to remove characters from output*/
 
+
+/*
 var yes = confirm("Would you like to include symbols?");
 
 if (yes == true) {
@@ -123,13 +127,34 @@ else {
   var hello = characters;
 }
 
-
-console.log(hello);
-
-
-function randPassword(hello) {
+*/
 
 
+//console.log(hello);
+
+/*
+function randPassword() {
+
+    var digits = window.prompt("How many?");
+
+}
+*/
+
+/*    
+    while (digits < 7 || digits > 180 || isNaN(digits)) {
+      alert("Please try again");
+      var digits = window.prompt("How many?");
+  
+  }
+
+  var yes = confirm("Would you like to include symbols?");
+
+if (yes == true) {
+  var hello = array3;
+}
+else {
+  var hello = characters;
+}
     
     var result =[];
     for (var i = 0; i < digits; i++){
@@ -139,16 +164,43 @@ function randPassword(hello) {
     return result.join('');
   }
     
-
+*/
 
 /*Define function genPassword to link click from HTML button
 Link with ID "password" to return in text box of HTML*/
 
-function genPassword() {
-    document.getElementById("password").innerHTML = randPassword(hello);
+function genPassword(hello) {
+    var digits = window.prompt("How many characters would you like to enter?");
+    while (digits < 7 || digits > 180 || isNaN(digits)) {
+      alert("Please try again");
+      var digits = window.prompt("How many?");
+  
+  }
+
+  var yes = confirm("Would you like to include symbols?");
+
+if (yes == true) {
+  var hello = array3;
+}
+else {
+  var hello = characters;
 }
 
 
+  var result =[];
+    for (var i = 0; i < digits; i++){
+        result.push(hello[Math.floor(Math.random() * hello.length)]);
+    }
+
+    
+   // return result.join('');
+  
+
+
+    document.getElementById("password").innerHTML = result.join('');
+
+
+  }
 //Copy to Clipboard function
 
 function copyToClipboard(element) {
